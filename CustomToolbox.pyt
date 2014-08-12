@@ -2,8 +2,8 @@
 Example toolbox.
 
 """
-from custom_module.custom_tool_three import ToolThree
-
+from custom_module.custom_tool_one import ToolOne
+from custom_module.custom_tool_two import ToolTwo
 
 
 class Toolbox(object):
@@ -20,4 +20,4 @@ class Toolbox(object):
 
 
         # List of tool classes associated with this toolbox
-        self.tools = [ToolThree]
+        self.tools = [ToolOne, ToolTwo]

@@ -1,11 +1,14 @@
 __author__ = 'Yogesh'
 
 
-class ToolThree(object):
+class ToolOne(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.label = "Tool"
-        self.description = ""
+        self.label = "Simple Tool"
+        self.description = "Simple Tool Description"
+        #category/toolset
+        self.category = 'Custom Category'
+        #stylesheet
         self.canRunInBackground = False
 
     def getParameterInfo(self):
