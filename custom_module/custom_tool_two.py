@@ -28,6 +28,11 @@ class ToolTwo(object):
         param0.filter.list = ['Point', 'Polyline', 'Polygon']
         params = [param0]
         '''
+        #GPMultiValue:GPString
+        #datatypes supported by arcgis server
+        # GPBoolean,GPDouble,GPLong,GPString,GPDate,GPLinearUnit,GPDataFile,GPRasterData
+        # GPRecordSet,GPRasterDataLayer,GPFeatureRecordSetLayer,GPRasterDataLayer,GPFeatureRecordSetLayer
+        # GPMultiValue:GPString
         params = None
         return params
 
@@ -61,7 +66,7 @@ def updateMessages(self, parameters):
     """Modify the messages created by internal validation for each tool
         parameter.  This method is called after internal validation."""
 
-    
+
     return
 
 
