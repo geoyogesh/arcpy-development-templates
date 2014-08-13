@@ -33,4 +33,7 @@ class ToolOne(object):
 
     def execute(self, parameters, messages):
         """The source code of the tool."""
+        
+        arcpy.env.overwriteOutput = True
+        
         return
