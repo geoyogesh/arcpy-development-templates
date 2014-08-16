@@ -33,6 +33,15 @@ class ToolTwo(object):
         # GPBoolean,GPDouble,GPLong,GPString,GPDate,GPLinearUnit,GPDataFile,GPRasterData
         # GPRecordSet,GPRasterDataLayer,GPFeatureRecordSetLayer,GPRasterDataLayer,GPFeatureRecordSetLayer
         # GPMultiValue:GPString
+
+        #featureset
+        #recordset(Table)
+        #raster
+        #linear unit (100kms, 10 miles)
+        #file(.ZIp, .KML, .XML)
+        #INteger,long,Double
+        #date
+        #Boolean
         params = None
         return params
 
