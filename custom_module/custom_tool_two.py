@@ -51,10 +51,12 @@ def isLicensed(self):
     #http://resources.arcgis.com/en/help/main/10.2/index.html#//002z0000000z000000
     '''
     try:
-        if CheckExtension("3D") != "Available":
-            raise Exception
+        if CheckExtension("Spatial") != "Available":
+            return False
+        else:
+            return True
     except Exception:
-        return False # tool cannot be executed
+        return False #False- Tool Cannot be executed
     '''
     return True
 
@@ -81,4 +83,36 @@ def updateMessages(self, parameters):
 
 def execute(self, parameters, messages):
     """The source code of the tool."""
+    
+    try:
+        pass
+    except:
+        # Get the traceback object
+        error = True
+        tb = sys.exc_info()[2]
+        tbinfo = traceback.format_tb(tb)[0]
+        # Concatenate information together concerning the error into a message string
+        pymsg = 'PYTHON ERRORS:\nTraceback info:\n' + tbinfo + '\nError Info:\n' + str(sys.exc_info()[1])
+        msgs = 'ArcPy ERRORS:\n' + arcpy.GetMessages() + '\n'
+        # Return python error messages for use in script tool or Python Window
+        arcpy.AddError(pymsg)
+        arcpy.AddError(msgs)
+        # Print Python error messages for use in Python / Python Window
+        #print pymsg + "\n" #UPDATE
+        print(pymsg + '\n')
+        #print msgs #UPDATE
+        print(msgs)
+    
+    
+    '''
+    try:
+        if CheckExtension("Spatial") == "Available":
+            arcpy.CheckOutExtension("Spatial")
+        else:
+            raise arcpy.LicenseError
+        pass
+    finally:
+        arcpy.CheckInExtension("Spatial")
+    '''
+    
     return
